@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.45.0'
+project:
+    name: rc-security-things
+    package:
+        name: rc-security-things
+        api_version: '52.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/rc-security-things/tests
+            options:
+                outputdir: robot/rc-security-things/results
+
+    robot_testdoc:
+        options:
+            path: robot/rc-security-things/tests
+            output: robot/rc-security-things/doc/rc-security-things_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75

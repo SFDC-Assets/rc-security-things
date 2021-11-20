@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Get_Auth_Session</name>
+        <label>Get Auth Session</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <actionName>rcGetAuthSession_Invocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Auth_Session</targetReference>
+        </connector>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <interviewLabel>Check Restricted Access {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Check Restricted Access</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Auth_Session</name>
+        <label>Auth Session</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>session_Login_Domain</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Auth_Session.loginDomain</elementReference>
+            </defaultValue>
+            <fieldText>Login Domain</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>session_Login_Type</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Auth_Session.loginType</elementReference>
+            </defaultValue>
+            <fieldText>Login Type</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>session_Logout_URL</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Auth_Session.logoutUrl</elementReference>
+            </defaultValue>
+            <fieldText>Logout URL</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>session_Username</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Auth_Session.username</elementReference>
+            </defaultValue>
+            <fieldText>Username</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>session_Session_Security_Level</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Auth_Session.sessionSecurityLevel</elementReference>
+            </defaultValue>
+            <fieldText>Session Security Level</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>session_Source_IP</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Auth_Session.sourceIp</elementReference>
+            </defaultValue>
+            <fieldText>Source IP</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Auth_Session</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>session</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>AuthSession</objectType>
+    </variables>
+</Flow>
